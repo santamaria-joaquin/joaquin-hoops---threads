@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro Basketball Shorts - Joaquin's Hoops & Threads</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+    :root {
+      --primary: #1a1a2e; --accent: #ff6b00;
+      --white: #ffffff; --light-gray: #f5f7fa; --dark-gray: #333344;
+      --shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    body { background: var(--light-gray); color: var(--dark-gray); line-height: 1.6; }
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: var(--white); padding: 1.5rem 5%;
+    }
+    .nav-container {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+    }
+    .logo-section { text-align: center; width: 100%; margin-bottom: 1rem; }
+    .logo { font-size: 1.8rem; font-weight: 800; color: var(--white); text-decoration: none; }
+    .tagline { font-size: 1rem; color: #b0b0c0; margin-top: 0.3rem; }
+    .nav-links {
+      display: flex; list-style: none; gap: 2rem; align-items: center;
+      justify-content: center; width: 100%;
+    }
+    .nav-links a {
+      color: #8ab4f8; text-decoration: none; font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .cart-btn {
+      position: relative; background: transparent; color: var(--white); border: none;
+      width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.4rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .cart-btn:hover { background: rgba(255, 107, 0, 0.2); transform: scale(1.1); }
+    .cart-count {
+      position: absolute; top: -4px; right: -4px; background: var(--accent);
+      color: white; font-size: 0.7rem; font-weight: bold;
+      width: 20px; height: 20px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    main { max-width: 1200px; margin: 2rem auto; padding: 0 5%; }
+    .product-container {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+      background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);
+    }
+    .product-img img { width: 100%; border-radius: 8px; object-fit: cover; }
+    .product-info h1 { font-size: 2rem; margin-bottom: 0.5rem; color: var(--primary); }
+    .price { font-size: 1.8rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem; }
+    .desc { color: #555; margin-bottom: 1.5rem; line-height: 1.7; }
+    .options { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .option-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; }
+    select, input[type="number"] {
+      padding: 0.6rem 1rem; border: 2px solid #ddd; border-radius: 6px;
+      font-size: 1rem; width: 130px;
+    }
+    .add-to-cart {
+      width: 100%; padding: 1rem; background: var(--accent); color: white;
+      border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 700;
+      cursor: pointer; transition: background 0.3s; margin-bottom: 1.5rem;
+    }
+    .add-to-cart:hover { background: #e05e00; }
+    .specs-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
+    .specs-table th, .specs-table td { padding: 0.8rem; text-align: left; border-bottom: 1px solid #eee; }
+    .specs-table th { background: #f9f9f9; font-weight: 700; width: 35%; }
+    footer { text-align: center; padding: 2rem; color: #888; font-size: 0.9rem; margin-top: 3rem; }
+    @media (max-width: 768px) {
+      .product-container { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
+      .nav-links { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo-section">
+        <a href="../index.html" class="logo">🏀 Joaquin's Hoops & Threads</a>
+        <p class="tagline">Your go-to spot for quality basketball gears</p>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><button class="cart-btn">🛒<span class="cart-count">0</span></button></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="product-container">
+      <div class="product-img">
+        <img src="../images/shorts.jpg" alt="Pro Basketball Shorts">
+      </div>
+      <div class="product-info">
+        <h1>Pro Basketball Shorts</h1>
+        <p class="price">₱549.00</p>
+        <p class="desc">Lightweight and durable basketball shorts with elastic waistband and adjustable drawstring. Relaxed fit for maximum movement — perfect match for our Premium Jersey!</p>
+        <div class="options">
+          <div class="option-group">
+            <label>Size</label>
+            <select>
+              <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Quantity</label>
+            <input type="number" value="1" min="1">
+          </div>
+        </div>
+        <button class="add-to-cart">🛒 Add to Cart</button>
+        <h3>Specifications</h3>
+        <table class="specs-table">
+          <tr><th>Material</th><td>100% Polyester / Breathable Mesh</td></tr>
+          <tr><th>Sizes</th><td>S, M, L, XL, XXL</td></tr>
+          <tr><th>Colors</th><td>Black, White, Navy Blue, Red, Pink</td></tr>
+          <tr><th>Price</th><td>₱549.00</td></tr>
+          <tr><th>Features</th><td>Elastic waistband, Drawstring, Side pockets, Quick-dry</td></tr>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    2026 Joaquin's Hoops & Threads and Passion for the game!
+  </footer>
+
+</body>
+</html>
