@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matching Basketball Shorts - Joaquin's Hoops & Threads</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+    :root {
+      primary: #1a1a1a; accent: #ff6b00; gold: #d4af37;
+     white: #ffffff; light-gray: #f5f5f5; dark-gray: #333333;
+      shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    body { background: var(light-gray); color: var(primary); line-height: 1.6; }
+    header {
+      background: var(primary); color: var(white); padding: 1rem 5%;
+      position: sticky; top: 0; z-index: 100; box-shadow: var(shadow);
+    }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.8rem; font-weight: 800; color: var(gold); text-decoration: none; }
+    .logo span { color: var(white); }
+    .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
+    .nav-links a { color: var(white); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+    .nav-links a:hover { color: var(gold); }
+    .cart-btn {
+      position: relative; background: transparent; color: var(white); border: none;
+      width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.4rem;
+      display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+    }
+    .cart-btn:hover { background: rgba(255,107,0,0.2); transform: scale(1.1); }
+    .cart-count {
+      position: absolute; top: -4px; right: -4px; background: var(accent); color: white;
+      font-size: 0.7rem; font-weight: bold; width: 20px; height: 20px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    main { max-width: 1200px; margin: 2rem auto; padding: 0 5%; }
+    .product-container {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; background: white;
+      padding: 3rem; border-radius: 16px; box-shadow: var(shadow); margin-top: 1rem;
+    }
+    .product-img img { width: 100%; border-radius: 12px; object-fit: cover; }
+    .product-info h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .price { font-size: 2rem; font-weight: 700; color: var(accent); margin-bottom: 1.5rem; }
+    .desc { color: var(dark-gray); margin-bottom: 2rem; line-height: 1.8; }
+    .options { display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .option-group label { display: block; font-weight: 600; margin-bottom: 0.8rem; }
+    select, input[type="number"] {
+      padding: 0.8rem 1.2rem; border: 2px solid #ddd; border-radius: 8px;
+      font-size: 1rem; width: 140px; transition: border-color 0.3s;
+    }
+    select:focus, input:focus { outline: none; border-color: var(accent); }
+    .add-to-cart {
+      width: 100%; padding: 1.2rem; background: var(accent); color: white;
+      border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 700;
+      cursor: pointer; transition: all 0.3s; margin-bottom: 1.5rem;
+    }
+    .add-to-cart:hover { background: #e05e00; transform: translateY(-2px); }
+    .specs-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+    .specs-table th, .specs-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .specs-table th { background: var(light-gray); font-weight: 700; width: 35%; }
+    .cart-modal {
+      display: block; position: fixed; top: 0; right: 0; width: 380px;
+      height: 100vh; background: white; box-shadow: -5px 0 20px rgba(0,0,0,0.15);
+      z-index: 200; padding: 2rem; overflow-y: auto;
+    }
+    .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #eee; }
+    .close-cart { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666; }
+    .close-cart:hover { color: var(accent); }
+    .cart-total { margin-top: 2rem; padding-top: 1rem; border-top: 2px solid var(primary); font-size: 1.3rem; font-weight: 700; display: flex; justify-content: space-between; }
+    .checkout-btn { width: 100%; padding: 1rem; background: var(primary); color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; margin-top: 1.5rem; cursor: pointer; }
+    .checkout-btn:hover { background: #333; }
+    @media (max-width: 900px) {
+      .product-container { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem; }
+      .nav-links { gap: 1rem; }
+      .cart-modal { width: 100%; }
+      .logo { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="../index.html" class="logo">Joaquin <span>Hoops & Threads</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><button class="cart-btn">🛒<span class="cart-count">0</span></button></li>
+      </ul>
+    </div>
+  </header>
+  <div class="cart-modal">
+    <div class="cart-header"><h2>Your Orders 🛒</h2><button class="close-cart">&times;</button></div>
+    <div><p style="color:#888; text-align:center; padding:2rem;">Your cart is empty</p></div>
+    <div class="cart-total"><span>Total:</span><span>₱0.00</span></div>
+    <button class="checkout-btn">Place Order</button>
+  </div>
+  <main>
+    <div class="product-container">
+      <div class="product-img"><img src="../images/shorts.jpg" alt="Matching Basketball Shorts"></div>
+      <div class="product-info">
+        <h1>Matching Basketball Shorts</h1>
+        <p class="price">₱599.00</p>
+        <p class="desc">Comfortable and lightweight basketball shorts designed for maximum movement and breathability. Features an elastic waistband with adjustable drawstring, side pockets, and a relaxed fit for unrestricted play. Perfect match for our Premium Basketball Jersey same colors, same quality!</p>
+        <div class="options">
+          <div class="option-group"><label>Size</label><select><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></div>
+          <div class="option-group"><label>Quantity</label><input type="number" value="1" min="1"></div>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <h3>Specifications</h3>
+        <table class="specs-table">
+          <tr><th>Material</th><td>100% Polyester / Breathable Mesh</td></tr>
+          <tr><th>Sizes</th><td>S, M, L, XL, XXL</td></tr>
+          <tr><th>Colors</th><td>Black, White, Navy Blue, Red, Gold</td></tr>
+          <tr><th>Price</th><td>₱599.00</td></tr>
+          <tr><th>Features</th><td>Elastic waistband, Drawstring, Side pockets, Quick-dry</td></tr>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+  
