@@ -1,11 +1,11 @@
 :root {
-  --brand-color: #0f172a;       
-  --dark-ink: #1e293b;          
-  --muted-grey: #64748b;        
-  --light-bg: #f8fafc;          
-  --accent-orange: #f97316;     
+  --brand-color: #1e293b;         
+  --accent-orange: #f97316;
+  --text-dark: #1e293b;
+  --bg-light: #f8fafc;
   --white: #ffffff;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,12 +13,11 @@
 }
 
 body {
-  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.6;
-  color: var(--dark-ink);
-  background-color: var(--light-bg);
+  color: var(--text-dark);
+  background-color: var(--bg-light);
 }
-
 
 header {
   background: var(--brand-color);
@@ -27,22 +26,14 @@ header {
   text-align: center;
 }
 
-header h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.3rem;
-}
-
-header p {
-  opacity: 0.85;
-  font-size: 1rem;
-}
+nav {
   background: var(--brand-color);
   padding: 0.5rem 0 1rem;
 }
 
 nav ul {
-  list-style: none; 
-  padding: 0;       
+  list-style: none;
+  padding: 0;
   text-align: center;
 }
 
@@ -53,14 +44,13 @@ nav li {
 
 nav a {
   color: var(--white);
-  text-decoration: none; 
-  font-weight: 500;
-  opacity: 0.9;
+  text-decoration: none;
 }
+
 nav a:hover {
-  opacity: 1;
   text-decoration: underline;
 }
+
 main {
   max-width: 1200px;
   margin: 2rem auto;
@@ -68,32 +58,34 @@ main {
 }
 
 main h2 {
-  color: var(--dark-ink);
+  color: var(--brand-color);
   margin-bottom: 1.5rem;
-  font-size: 1.4rem;
   border-bottom: 1px solid #e2e8f0;
   padding-bottom: 0.5rem;
 }
+
 .product-card {
-  background: var(--white);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 20px;
+  border-left: 5px solid var(--brand-color);
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .product-card h3 {
   font-size: 1.25rem;
+  color: var(--brand-color);
   margin-bottom: 0.5rem;
 }
 
 .product-card h3 a {
-  color: #1d4ed8;
-  text-decoration: underline;
+  color: var(--brand-color);
+  text-decoration: none;
 }
 
 .product-card .price {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: var(--accent-orange);
   margin: 0.5rem 0;
@@ -105,160 +97,56 @@ main h2 {
   border-radius: 4px;
 }
 
-.product-card .enquiry-link {
-  color: #1d4ed8;
-  font-size: 0.95rem;
-}
-.product-detail img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-}
-.product-detail h1 {
-  font-size: 2.5rem;
-  color: var(--dark-ink);
-  margin-bottom: 0.5rem;
-}
-.product-detail .price {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--accent-orange);
-  margin: 1rem 0;
-}
-.product-detail p {
-  font-size: 1.1rem;
-  color: var(--muted-grey);
-  margin-bottom: 2rem;
-  line-height: 1.8;
-}
-.size-quantity {
-  display: flex;
-  gap: 2rem;
-  margin: 2rem 0;
-  flex-wrap: wrap;
-}
-.size-quantity label {
-  font-weight: bold;
-  font-size: 1.2rem;
-  display: block;
-  margin-bottom: 0.8rem;
-}
-.size-quantity select,
-.size-quantity input {
-  padding: 0.8rem;
-  font-size: 1.1rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  min-width: 150px;
-}
-.add-to-cart-btn {
-  background: var(--accent-orange);
-  color: var(--white);
-  border: none;
-  padding: 1.2rem 2.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  max-width: 400px;
-  margin: 1rem 0 3rem;
+fieldset {
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
 }
 
-.add-to-cart-btn:hover {
-  background: #ea580c;
-}
-.specs-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-  background: var(--white);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-.specs-table td {
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid #e2e8f0;
-  font-size: 1.05rem;
+legend {
+  color: var(--brand-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0 10px;
 }
 
-.specs-table td:first-child {
-  font-weight: bold;
-  color: var(--dark-ink);
-  background: #f1f5f9;
-  width: 30%;
-}
-  background: var(--white);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  margin-bottom: 2rem;
-}
-.card h2 {
-  border-bottom: 1px solid #e2e8f0;
-  padding-bottom: 0.8rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.3rem;
-}
-.owner-img {
-  max-width: 300px;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
-form label {
-  display: block;
-  margin: 1.2rem 0 0.5rem;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-form input,
-form select,
-form textarea {
+input,
+textarea,
+select {
   width: 100%;
-  padding: 0.9rem;
-  border: 1px solid #cbd5e1;
+  padding: 12px;
+  margin: 8px 0 16px;
+  border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 1rem;
 }
-form textarea {
-  min-height: 150px;
-}
-.enquiry-form h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--dark-ink);
-}
-.enquiry-form fieldset {
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  padding: 1.2rem;
-  margin: 1.5rem 0;
-}
-.enquiry-form legend {
-  font-weight: bold;
-  font-size: 1.1rem;
-  padding: 0 0.5rem;
-}
-.enquiry-form input[type="radio"],
-.enquiry-form input[type="checkbox"] {
-  width: auto;
-  margin-right: 0.5rem;
-}
-.enquiry-form button {
-  background: #2563eb;
-  color: white;
+
+button[type="submit"] {
+  background-color: var(--brand-color);
+  color: var(--white);
+  padding: 14px 32px;
   border: none;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
   border-radius: 6px;
+  font-size: 1rem;
   cursor: pointer;
-  margin-top: 1.5rem;
 }
+
+button[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid var(--brand-color);
+  outline-offset: 2px;
+  border-color: transparent;
+}
+
 footer {
   text-align: center;
   padding: 2rem;
-  color: var(--muted-grey);
-  font-size: 0.95rem;
-  margin-top: 3rem;
+  color: #666;
+  margin-top: 2rem;
 }
